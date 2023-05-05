@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables
 
-import 'package:firstocktask/components/responsive_wrapper.dart';
+import 'package:firstocktask/components/responsive.dart';
+import 'package:firstocktask/components/ui_helper.dart';
 import 'package:firstocktask/components/widget_wrapper.dart';
 import 'package:firstocktask/screens/pages/home/views/markets_charts.dart';
 import 'package:firstocktask/screens/pages/home/views/profile/profile_card.dart';

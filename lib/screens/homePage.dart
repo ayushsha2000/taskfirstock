@@ -1,6 +1,7 @@
 import 'package:firstocktask/screens/pages/home/home_view.dart';
 import 'package:firstocktask/screens/pages/insights/insight_view.dart';
 import 'package:firstocktask/screens/pages/set/set_view.dart';
+import 'package:firstocktask/components/ui_helper.dart';
 
 import 'package:flutter/material.dart';
 
@@ -19,8 +20,24 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
+      bottomNavigationBar: isMobile(context)?BottomNavigationBar(
+        currentIndex: _selectIndex, 
+        unselectedItemColor: Colors.grey, 
+        selectedItemColor: Colors.black, 
+        onTap: (int index){ 
+          setState(() {
+            _selectIndex = index;
+          });
+        },
+        items: const [ 
+          BottomNavigationBarItem(icon: Icon(Icons.home,),label: 'Home'),
+          BottomNavigationBarItem(icon: Icon(Icons.search,),label: 'Search'),
+          BottomNavigationBarItem(icon: Icon(Icons.settings,),label: 'Settings'),
+          BottomNavigationBarItem(icon: Icon(Icons.verified,),label: 'Profile'),
+        ] ):null,
       body: Row(
         children: [
+          if(isDesktop(context))
           Padding(
             padding: const EdgeInsets.symmetric(horizontal:12.0, vertical: 32),
             child: ClipRRect( 
